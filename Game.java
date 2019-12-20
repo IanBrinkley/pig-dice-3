@@ -94,6 +94,7 @@ public class Game extends Application {
                 }
                 //end turn stuff
                 p1.updateScores();
+                p1ScoreTxt.setText("Player 1 score: " + p1.getTotalScore());
                 roundScoreTxt.setText("Round score: " + p1.getRoundScore());
                 diceTxt.setText("Dice: " + p1.getD1Face() + " " + p1.getD2Face());
             } else {
@@ -112,6 +113,7 @@ public class Game extends Application {
                 }
                 //end turn stuff
                 p2.updateScores();
+                p2ScoreTxt.setText("Player 2 score: " + p2.getTotalScore());
                 roundScoreTxt.setText("Round score: " + p2.getRoundScore());
                 diceTxt.setText("Dice: " + p2.getD1Face() + " " + p2.getD2Face());
             }
@@ -122,6 +124,7 @@ public class Game extends Application {
             if (p1.getIsTurn()) {
                 p1.passTurn();
                 p1ScoreTxt.setText("Player 1 score: " + p1.getTotalScore());
+                roundScoreTxt.setText("Round score: 0");
                 if (p1.getTotalScore() < 100) {
                     p2.setIsTurn(true);
                     currentTurnTxt.setText("Player 2's turn");
@@ -132,6 +135,7 @@ public class Game extends Application {
             } else {
                 p2.passTurn();
                 p2ScoreTxt.setText("Player 2 score: " + p2.getTotalScore());
+                roundScoreTxt.setText("Round score: 0");
                 if (p2.getTotalScore() < 100) {
                     p1.setIsTurn(true);
                     currentTurnTxt.setText("Player 1's turn");
